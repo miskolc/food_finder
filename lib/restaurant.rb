@@ -1,5 +1,7 @@
+ require 'support/number_helper.rb' 
  class Restaurant
-
+  include NumberHelper
+  
   @@file_path = nil
   attr_accessor :name, :cuisine, :price
 
@@ -77,5 +79,9 @@
       file.puts "#{[@name, @cuisine, @price].join("\t")}\n"
     end
     return true
+  end
+
+  def formatted_price
+    number_to_currency(@price)
   end
  end
