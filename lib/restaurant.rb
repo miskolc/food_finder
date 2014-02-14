@@ -3,11 +3,12 @@
   include NumberHelper
   
   @@file_path = nil
-  attr_accessor :name, :cuisine, :price
 
   def self.file_path=(path=nil)
     @@file_path = path
   end
+
+  attr_accessor :name, :cuisine, :price
 
   def self.file_exists?
     # class should know if the restaurant file exists
